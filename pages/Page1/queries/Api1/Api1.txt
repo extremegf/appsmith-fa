@@ -2,9 +2,13 @@ query MyQuery {
   consoleView {
     ... on ConsoleView {
       __typename
-      userInfo {
-        email
+      projects {
+        id
+        name
       }
+    }
+    ... on NotSignedInError {
+      message
     }
   }
 }

@@ -51,7 +51,10 @@
                   "key": "tableData"
                 },
                 {
-                  "key": "primaryColumns.data.computedValue"
+                  "key": "primaryColumns.id.computedValue"
+                },
+                {
+                  "key": "primaryColumns.name.computedValue"
                 }
               ],
               "needsHeightForContent": true,
@@ -89,7 +92,7 @@
                 }
               },
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "columnUpdatedAt": 1678798105273,
+              "columnUpdatedAt": 1678809420061,
               "originalBottomRow": 229,
               "defaultSelectedRowIndices": [
                 0
@@ -97,7 +100,8 @@
               "widgetName": "Table1",
               "defaultPageSize": 0,
               "columnOrder": [
-                "data"
+                "id",
+                "name"
               ],
               "dynamicPropertyPathList": [],
               "compactMode": "SHORT",
@@ -114,13 +118,13 @@
               "dynamicTriggerPathList": [],
               "borderWidth": "1",
               "primaryColumns": {
-                "data": {
+                "id": {
                   "allowCellWrapping": false,
                   "index": 0,
                   "width": 150,
-                  "originalId": "data",
-                  "id": "data",
-                  "alias": "data",
+                  "originalId": "id",
+                  "id": "id",
+                  "alias": "id",
                   "horizontalAlignment": "LEFT",
                   "verticalAlignment": "CENTER",
                   "columnType": "text",
@@ -135,10 +139,39 @@
                   "isEditable": false,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "data",
+                  "label": "id",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"data\"]))}}",
+                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"id\"]))}}",
+                  "sticky": "",
+                  "validation": {},
+                  "cellBackground": "transparent"
+                },
+                "name": {
+                  "allowCellWrapping": false,
+                  "index": 1,
+                  "width": 150,
+                  "originalId": "name",
+                  "id": "name",
+                  "alias": "name",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "text",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "fontStyle": "",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "name",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"name\"]))}}",
                   "sticky": "",
                   "validation": {},
                   "cellBackground": "transparent"
@@ -152,7 +185,7 @@
               "widgetId": "a0szfbk93m",
               "allowAddNewRow": true,
               "minWidth": 450,
-              "tableData": "{{[Api1.data]}}",
+              "tableData": "{{Api1.data.data.consoleView.projects}}",
               "label": "Data",
               "searchKey": "",
               "parentId": "0",
@@ -174,7 +207,9 @@
               "name": "Api1",
               "confirmBeforeExecute": false,
               "pluginType": "API",
-              "jsonPathKeys": [],
+              "jsonPathKeys": [
+                "'USER_BEARER_TOKEN'"
+              ],
               "timeoutInMillisecond": 10000
             }
           ]
